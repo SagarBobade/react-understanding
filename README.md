@@ -19,6 +19,10 @@
 
 * If you have npx and Node.js installed, you can create a React application by using create-react-app.
 ```npx create-react-app my-react-app``` - This will set up everything you need to run a React application.
+Here, we will create app that will be setup with typescript. So, we will use command -
+```
+npx create-react-app my-app --template typescript
+```
 
 ## Run the React Application
 ```
