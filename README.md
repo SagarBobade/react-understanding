@@ -1,12 +1,12 @@
 # react-understanding
 
 # Technique
-* Ask chatgpt to explain each topic in very basic way with examples.
+* Ask chatgpt or any ai tool to explain each topic in a very basic way with examples.
 
 ## Why react
-* React is a JavaScript library for building user interfaces.
-* React is used to build single-page applications.
-* React allows us to create reusable UI components.
+* React is a **JavaScript library** for building user interfaces.
+* React is used **to build single-page applications**.
+* React allows us to **create reusable UI components**.
 
 ## How does React Work?
 * React creates a VIRTUAL DOM in memory - Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, where it does all the necessary manipulating, before making the changes in the browser DOM.
