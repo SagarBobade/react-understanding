@@ -1,5 +1,7 @@
 # react-understanding
 
+# Technique
+* Ask chatgpt to explain each topic in very basic way with examples.
 
 ## Why react
 * React is a JavaScript library for building user interfaces.
@@ -40,7 +42,10 @@ function Welcome(props) {
   return <h1>Hello, {props.name}!</h1>;
 }
 const element = <Welcome name="Sara" />;
-  
+* another ex.
+  const myElement = <h1>I Love JSX!</h1>;
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(myElement);
 
 ## Typescript
 ### Class
@@ -66,5 +71,6 @@ const element = <Welcome name="Sara" />;
 * Github repositories
 * Websites
   - https://www.w3schools.com/react/default.asp
+* Chatgpt
  
   
