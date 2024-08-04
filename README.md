@@ -48,5 +48,8 @@ ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of 
 
 ## Study resources
 * Youtube
+* Github repositories
 * Websites
   - https://www.w3schools.com/react/default.asp
+ 
+  
