@@ -34,7 +34,7 @@ ES6 stands for ECMAScript 6.
 ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of ECMAScript, it was published in 2015, and is also known as ECMAScript 2015.
 
 ## React JSX
-JSX stands for JavaScript XML.
+JSX stands for **JavaScript XML**.
 It allows you to write HTML-like code in React, making it easier to create and structure UI components. JSX makes your code more readable and expressive by combining the logic of JavaScript with the structure of HTML.
 * **HTML-Like Syntax**: JSX lets you write elements that look like HTML, but they're actually JavaScript objects.
 ```
