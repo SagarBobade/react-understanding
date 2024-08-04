@@ -27,6 +27,21 @@ npm start
 ES6 stands for ECMAScript 6.
 ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of ECMAScript, it was published in 2015, and is also known as ECMAScript 2015.
 
+## React JSX
+JSX stands for JavaScript XML.
+It allows you to write HTML-like code in React, making it easier to create and structure UI components. JSX makes your code more readable and expressive by combining the logic of JavaScript with the structure of HTML.
+* HTML-Like Syntax: JSX lets you write elements that look like HTML, but they're actually JavaScript objects.
+ex. const element = <h1>Hello, world!</h1>;
+* Embedding JavaScript: You can embed JavaScript expressions within JSX by using curly braces {}
+ex. const name = "John";
+const element = <h1>Hello, {name}!</h1>;
+* Components: JSX is often used to define React components. A component is a reusable piece of UI. For example: 
+function Welcome(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+const element = <Welcome name="Sara" />;
+  
+
 ## Typescript
 ### Class
 ### Arrow function
