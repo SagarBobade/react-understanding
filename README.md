@@ -18,7 +18,7 @@
 2. Node JS includes npm
 
 * If you have npx and Node.js installed, you can create a React application by using create-react-app.
-npx create-react-app my-react-app - This will set up everything you need to run a React application.
+```npx create-react-app my-react-app``` - This will set up everything you need to run a React application.
 
 ## Run the React Application
 ```
