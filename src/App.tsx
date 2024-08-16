@@ -1,8 +1,12 @@
-import React from 'react';
+import { Console } from 'console';
 import './App.css';
+import { Button } from './components/Button';
 import { Greet } from './components/Greet';
+import { Header } from './components/Header';
+import { Oscar } from './components/Oscar';
 import { Person } from './components/Person';
 import { PersonList } from './components/PersonList';
+import { Status } from './components/Status';
 
 function App() {
   // this should match with props defined in the component
@@ -29,9 +33,23 @@ function App() {
 
   return (
     <div className='App'>
-      <Greet name = 'Me' age={31} />
-      <Person name = {PersonName}/>
-      <PersonList names={PersonListArray}/>
+      { <Greet name = 'Me' age={31} /> }
+
+      { <Person name = {PersonName}/>}
+
+      { <PersonList names={PersonListArray}/>}
+
+      { <Status status = "IP"/>}
+
+      {<Header>Placeholder text</Header>}
+       <Oscar>
+        <Header>Oscar goes to Leaonardo Di Caprio</Header>
+      </Oscar>
+      
+      { <Button handleClick={()=> {
+          console.log("Button clicked")
+      } }/>}
+
     </div>
   )
 }
