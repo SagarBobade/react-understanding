@@ -33,22 +33,34 @@ function App() {
 
   return (
     <div className='App'>
+      <h4>Example of pass a variable as a prop</h4>
       { <Greet name = 'Me' age={31} /> }
+<p>====================================================== </p>
 
+    <h4>Example of pass a object as a prop</h4>
       { <Person name = {PersonName}/>}
+<p>====================================================== </p>
 
+      <h4>Example of pass an Array as a prop</h4>
       { <PersonList names={PersonListArray}/>}
+<p>====================================================== </p>
 
+      <h4>Example of conditioning as per prop</h4>
       { <Status status = "IP"/>}
+<p>====================================================== </p>
 
+      <h4>Example of nested component</h4>
       {<Header>Placeholder text</Header>}
        <Oscar>
         <Header>Oscar goes to Leaonardo Di Caprio</Header>
       </Oscar>
-      
+<p>====================================================== </p>
+
+      <h4>Example of Click event</h4>      
       { <Button handleClick={()=> {
           console.log("Button clicked")
       } }/>}
+<p>====================================================== </p>
 
     </div>
   )
