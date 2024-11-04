@@ -1,5 +1,6 @@
 import './App.css';
 import { Button } from './components/Button';
+import { Container } from './components/Container';
 import { Greet } from './components/Greet';
 import { Header } from './components/Header';
 import { Input } from './components/Input';
@@ -38,7 +39,7 @@ function App() {
 <p>====================================================== </p>
 
     <h4>Example of pass a object as a prop</h4>
-      { <Person name = {PersonName}/>}
+      { <Person first={PersonName.first} last={PersonName.last}/>}
 <p>====================================================== </p>
 
       <h4>Example of pass an Array as a prop</h4>
@@ -63,8 +64,9 @@ function App() {
 <p>====================================================== </p>
 
       <Input value='' handleChange={(event) => console.log(event)}/>
-      <p>====================================================== </p>
+<p>====================================================== </p>
 
+      <Container styles={{border:'1px solid black', padding:'1rem'}} />
     </div>
   )
 }
