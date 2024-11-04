@@ -1,8 +1,8 @@
-import { Console } from 'console';
 import './App.css';
 import { Button } from './components/Button';
 import { Greet } from './components/Greet';
 import { Header } from './components/Header';
+import { Input } from './components/Input';
 import { Oscar } from './components/Oscar';
 import { Person } from './components/Person';
 import { PersonList } from './components/PersonList';
@@ -61,6 +61,9 @@ function App() {
           console.log("Button clicked")
       } }/>}
 <p>====================================================== </p>
+
+      <Input value='' handleChange={(event) => console.log(event)}/>
+      <p>====================================================== </p>
 
     </div>
   )
