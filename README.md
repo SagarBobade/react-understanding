@@ -1,5 +1,19 @@
 # react-understanding
 
+# How to run this project
+
+# Examples
+* Props
+  * Typing Props -
+  * Basic Props -
+  * Advance Props -
+  * Event Props -
+  * Style Props -
+* Hooks
+  * useState -
+  * useState with future value -
+
+
 # Technique
 * Ask chatgpt or any ai tool to explain each topic in a very basic way with examples.
 
