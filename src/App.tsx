@@ -1,102 +1,62 @@
+import { useState } from 'react';
 import './App.css';
-import { Button } from './components/Button';
-import { Container } from './components/Container';
-import { Greet } from './components/Greet';
-import { Header } from './components/Header';
-import { Input } from './components/Input';
-import { Oscar } from './components/Oscar';
-import { Person } from './components/Person';
-import { PersonList } from './components/PersonList';
-import { Status } from './components/Status';
-import { LoggedIn } from './components/state/LoggedIn';
-import { User } from './components/state/user';
+import AppContent from './components/DevTools';
+import BackgroundToggler from './components/BackgroundToggler';
+import Portfolio from './components/Portfolio';
 
-function App() {
-  // this should match with props defined in the component
-  const PersonName = {
-    first: 'Isabelle',
-    last: 'Jacobi',
-  }
+const App: React.FC = () => {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<string>('portfolio'); // Track active tab
 
-  const PersonListArray = [
-    {
-      first: 'Jackie',
-      last: 'Stamm'
-    },
-    {
-      first: 'Dominique',
-      last: 'Wilkinson'
-    },
-    {
-      first: 'Zion',
-      last: 'Nikolaus'
-    }
-  ]
+  // Toggle the background color for dark mode
+  const toggleBackgroundColor = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
+
+  // Set the body background color globally based on the theme
+  document.body.style.backgroundColor = isDarkMode ? '#333' : '#fff';
+  document.body.style.color = isDarkMode ? '#fff' : '#000';
+  document.body.style.transition = 'background-color 0.3s ease';
 
   return (
-    <div className='App' style={{ 
-        display: "grid", 
-        gridTemplateColumns: "1fr 1fr", 
-        gap: "60px", 
-        paddingLeft: "50px", 
-        paddingRight: "50px"
-        }}>
-      <div>
-      <h4>Example of pass a variable as a prop</h4>
-      { <Greet name = 'Me' age={31} /> }
-<p>====================================================== </p>
-</div>
-<div>
-    <h4>Example of pass a object as a prop</h4>
-      { <Person first={PersonName.first} last={PersonName.last}/>}
-<p>====================================================== </p>
-</div>
-<div>
-      <h4>Example of pass an Array as a prop</h4>
-      { <PersonList names={PersonListArray}/>}
-<p>====================================================== </p>
-</div>
-<div>
-      <h4>Example of conditioning as per prop</h4>
-      { <Status status = "IP"/>}
-<p>====================================================== </p>
-</div>
-<div>
-      <h4>Example of nested component</h4>
-      {<Header>Placeholder text</Header>}
-       <Oscar>
-        <Header>Oscar goes to Leaonardo Di Caprio</Header>
-      </Oscar>
-<p>====================================================== </p>
-</div>
-<div>
-      <h4>Example of Click event</h4>      
-      { <Button handleClick={()=> {
-          console.log("Button clicked")
-      } }/>}
-<p>====================================================== </p>
-</div>
-<div>
-      <Input value='' handleChange={(event) => console.log(event)}/>
-<p>====================================================== </p>
-</div>
-<div>
-      <Container styles={{border:'1px solid black', padding:'1rem'}} />
+    <div className="App">
+      {/* Global theme toggle */}
+      <BackgroundToggler isDarkMode={isDarkMode} toggleBackgroundColor={toggleBackgroundColor} />
 
-<p>====================================================== </p>
-</div>
-<div>
-      <h4>Example of useState hook with single/null value</h4>      
-    { <LoggedIn/>}
-<p>====================================================== </p>
-</div>
-<div>
-  <h4>Example of useState hook when initial value is different than initial value</h4>      
-      {<User/>}
-<p>====================================================== </p>
+      {/* Header with Theme Toggle and Tab Navigation */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <div style={{ display: 'flex' }}>
+          {/* Tabs for navigation */}
+          <div
+            onClick={() => setActiveTab('portfolio')}
+            style={{
+              padding: '10px 20px',
+              cursor: 'pointer',
+              fontWeight: activeTab === 'portfolio' ? 'bold' : 'normal',
+              borderBottom: activeTab === 'portfolio' ? '2px solid #000' : 'none',
+            }}
+          >
+            Portfolio
+          </div>
+          <div
+            onClick={() => setActiveTab('appContent')}
+            style={{
+              padding: '10px 20px',
+              cursor: 'pointer',
+              fontWeight: activeTab === 'appContent' ? 'bold' : 'normal',
+              borderBottom: activeTab === 'appContent' ? '2px solid #000' : 'none',
+              marginLeft: '20px',
+            }}
+          >
+            Dev Tools
+          </div>
+        </div>
+      </div>
 
+      {/* Conditional Rendering for active tab */}
+      {activeTab === 'portfolio' ? <Portfolio isDarkMode={isDarkMode} /> : <AppContent isDarkMode={isDarkMode} />}
     </div>
-    </div>
-  )
-    }
+  );
+};
+
 export default App;
